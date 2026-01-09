@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(aws configure:*)",
+      "Bash(aws sts get-caller-identity:*)",
+      "Bash(for region in us-east-1 us-east-2 us-west-1 us-west-2 ap-northeast-2)",
+      "Bash(do echo '===== Region: $region =====' aws ec2 describe-instances --region $region --query 'Reservations[].Instances[].[InstanceId, State.Name]' --output text)",
+      "Bash(do echo '===== Region: $region =====')",
+      "Bash(aws ec2 describe-instances:*)",
+      "Bash(done)",
+      "Bash(aws s3 ls:*)",
+      "Bash(do echo \"Region: $region\")",
+      "Bash(aws rds describe-db-instances:*)",
+      "Bash(aws lambda list-functions:*)",
+      "Bash(aws cloudformation list-stacks:*)",
+      "Bash(aws elasticbeanstalk describe-environments:*)",
+      "Bash(aws route53 list-hosted-zones:*)",
+      "Bash(for zone_id in Z06041243O8YW3T09470O Z04007144HIQVPHHRRRE Z06584881XYBOOBRS95WM Z03975731WP68IRQYU623)",
+      "Bash(do echo \"=== Zone: $zone_id ===\")",
+      "Bash(aws route53 list-resource-record-sets:*)",
+      "Bash(aws route53 delete-hosted-zone:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
